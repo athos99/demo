@@ -1,0 +1,23 @@
+default:
+    suites:
+        default:
+            contexts:
+                - WebContext
+            paths:
+                - "%paths.base%/features/web"
+    extensions:
+        Behat\MinkExtension:
+            base_url: http://localhost/symfony/behat/app
+            sessions:
+                default:
+                    goutte:
+                        guzzle_parameters:
+                            verify: false
+                            proxy: ''
+unit:
+    suites:
+        default:
+            contexts:
+                - UnitContext
+            paths:
+                - "%paths.base%/features/unit"
